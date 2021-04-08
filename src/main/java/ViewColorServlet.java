@@ -12,7 +12,7 @@ public class ViewColorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         PrintWriter out = res.getWriter();
         res.setContentType("text/html");
-        String color = req.getParameter("color");
+        String color = req.getParameter("choice");
         String output = "";
         output += String.format("<h1 style='color:%s'>%s</h1>", color, color);
         out.println(output);
