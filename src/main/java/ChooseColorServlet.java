@@ -11,7 +11,7 @@ public class ChooseColorServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         out.println("<form method='POST' action='/choose-color'>\n" +
-                "    <input type=\"text\" name=\"choice\" placeholder=\"Enter a color\">\n" +
+                "    <input type='text' name='choice' placeholder='Enter a color'>\n" +
                 "    <button>Submit</button>\n" +
                 "</form>");
     }
