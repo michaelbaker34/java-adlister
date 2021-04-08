@@ -10,6 +10,9 @@ public class PageCountServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) {
+        if (req.getParameter("reset") != null) {
+            pageCountViews = 0;
+        }
         pageCountViews += 1;
         System.out.println(pageCountViews);
     }
