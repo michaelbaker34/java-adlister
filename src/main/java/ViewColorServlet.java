@@ -1,21 +1,16 @@
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet ("/view-color")
+@WebServlet("/view-color")
 public class ViewColorServlet extends HttpServlet {
-
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        PrintWriter out = res.getWriter();
-        res.setContentType("text/html");
-        String color = req.getParameter("choice");
-        String output = "";
-        output += String.format("<h1 style='color:%s'>%s</h1>", color, color);
-        out.println(output);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // /view-color?choice=red
+        String color = request.getParameter("choice");
+        PrintWriter out = response.getWriter();
+        out.println(String.format("<h1 style='color:%s'>%s</h1>", color, color));
     }
-
 }
