@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.*" %>
 <%@ page import="contact.Contact" %>
 <%--
   Created by IntelliJ IDEA.
@@ -9,13 +8,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    List<Contact> contacts = new ArrayList<>(Arrays.asList(
-        new Contact(1, "bob", "bob@bob.com", "1 lane", "1234567", true),
-        new Contact(2, "jen", "jen@jen.com", "2 drive", "7654321", false)
-    ));
-    request.setAttribute("contacts", contacts);
-%>
 <html>
 <head>
     <jsp:include page="partials/head.jsp">
@@ -24,7 +16,7 @@
 </head>
 <body>
     <ol>
-        <c:forEach var="contact" items="${contacts}">
+        <c:forEach var="contact" items="${Contact}">
             <c:if test="${contact.isActive}">
                 <h2>${contact.id}</h2>
                 <h2>${contact.name}</h2>
