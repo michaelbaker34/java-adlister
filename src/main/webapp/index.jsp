@@ -4,7 +4,8 @@
 <head>
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Index"/>
-    </jsp:include></head>
+    </jsp:include>
+</head>
 <body>
     <c:if test="true">
         <h1>Variable names should be very descriptive</h1>

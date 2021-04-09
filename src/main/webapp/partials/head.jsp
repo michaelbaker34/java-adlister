@@ -9,5 +9,5 @@
 
 <head>
     <title><%= request.getParameter("title")%>></title>
-    <%@include file="stylesheet.html"%>
+    <jsp:include page="stylesheet.html"/>
 </head>
