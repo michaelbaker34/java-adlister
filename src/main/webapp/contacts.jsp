@@ -11,9 +11,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     List<Contact> contacts = new ArrayList<>(Arrays.asList(
-            new Contact(1, "bob", "bob@bob.com", "1 lane", "1234567", true),
-            new Contact(2, "jen", "jen@jen.com", "2 drive", "7654321", false)
-            ));
+        new Contact(1, "bob", "bob@bob.com", "1 lane", "1234567", true),
+        new Contact(2, "jen", "jen@jen.com", "2 drive", "7654321", false)
+    ));
     request.setAttribute("contacts", contacts);
 %>
 <html>
