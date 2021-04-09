@@ -20,9 +20,9 @@
 %>
 
 <html>
-<head>
-    <title>Login</title>
-</head>
+<jsp:include page="partials/head.jsp">
+    <jsp:param name="title" value="Login Page"/>
+</jsp:include>
 <body>
 
     <form action="${pageContext.request.contextPath}/login.jsp" method="post">
