@@ -1,3 +1,5 @@
+package contact;
+
 public class Contact {
 
     private long id;
