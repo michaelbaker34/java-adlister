@@ -58,7 +58,7 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
-    public boolean isActive() {
+    public boolean getIsActive() {
         return isActive;
     }
 

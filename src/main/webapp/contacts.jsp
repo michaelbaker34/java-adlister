@@ -10,9 +10,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    Contact contact1 = new Contact(1, "bob", "bob@bob.com", "1 lane", "1234567", true);
-    Contact contact2 = new Contact(2, "jen", "jen@jen.com", "2 drive", "7654321", false);
-    List<Contact> contacts = new ArrayList<>(Arrays.asList(contact1, contact2));
+    List<Contact> contacts = new ArrayList<>(Arrays.asList(
+            new Contact(1, "bob", "bob@bob.com", "1 lane", "1234567", true),
+            new Contact(2, "jen", "jen@jen.com", "2 drive", "7654321", false)
+            ));
     request.setAttribute("contacts", contacts);
 %>
 <html>
@@ -24,7 +25,7 @@
 <body>
     <ol>
         <c:forEach var="contact" items="${contacts}">
-            <c:if test="${contact.active}">
+            <c:if test="${contact.isActive}">
                 <h2>${contact.id}</h2>
                 <h2>${contact.name}</h2>
                 <h2>${contact.email}</h2>
