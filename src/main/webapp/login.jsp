@@ -8,8 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    if ((request.getParameter("displayName").equalsIgnoreCase("admin")) && (request.getParameter("password").equalsIgnoreCase("password"))) {
-        response.sendRedirect("/profile.jsp");
+    if (request.getMethod().equalsIgnoreCase("POST")) {
+        String displayName = (request.getParameter("displayName") != null) ? request.getParameter("displayName") : "";
+        String password = (request.getParameter("password") != null) ? request.getParameter("password") : "";
+        if (displayName.equalsIgnoreCase("admin") && password.equalsIgnoreCase("password")) {
+            response.sendRedirect("/profile.jsp");
+        } else {
+            response.sendRedirect("/login.jsp");
+        }
     }
 %>
 
