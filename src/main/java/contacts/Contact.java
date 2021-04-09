@@ -1,4 +1,4 @@
-package contact;
+package contacts;
 
 public class Contact {
 
