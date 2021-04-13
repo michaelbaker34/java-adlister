@@ -4,8 +4,8 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/ads")
-public class ViewAdsServlet extends HttpServlet {
+@WebServlet(name = "AdsIndexServlet", urlPatterns = "/ads")
+public class AdsIndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
