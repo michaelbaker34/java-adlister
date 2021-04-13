@@ -7,13 +7,11 @@ import java.io.IOException;
 public class PizzaOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // what do i write to send the user a view based on pizza-order.jsp????
-        request.getRequestDispatcher("pizza-order.jsp").forward(request, response);
+        request.getRequestDispatcher("/pizza-form.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        // pull out each parameter value and print it out
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println(request.getParameter("crust-type"));
         System.out.println(request.getParameter("sauce-type"));
         String[] toppings = request.getParameterValues("toppings");
