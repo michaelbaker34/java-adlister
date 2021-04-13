@@ -1,43 +1,34 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: baker
-  Date: 4/8/21
-  Time: 14:46
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <%
-    if (request.getMethod().equalsIgnoreCase("POST")) {
-        String displayName = (request.getParameter("displayName") != null) ? request.getParameter("displayName") : "";
-        String password = (request.getParameter("password") != null) ? request.getParameter("password") : "";
-        if (displayName.equalsIgnoreCase("admin") && password.equalsIgnoreCase("password")) {
-            response.sendRedirect("/profile.jsp");
-        } else {
-            response.sendRedirect("/login.jsp");
+    if (request.getMethod().equalsIgnoreCase("post")) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("admin") && password.equals("password")) {
+            response.sendRedirect("/profile");
         }
     }
 %>
-
 <html>
-<jsp:include page="partials/head.jsp">
-    <jsp:param name="title" value="Login Page"/>
-</jsp:include>
+<head>
+    <jsp:include page="partials/head.jsp">
+        <jsp:param name="title" value="Please Log In" />
+    </jsp:include>
+</head>
 <body>
-
-    <form action="${pageContext.request.contextPath}/login.jsp" method="post">
-        <label for="displayName">Enter Name</label>
-        <input id="displayName" type="text" name="displayName">
-        <label for="password">Enter Password</label>
-        <input id="password" type="password" name="password">
-        <button>Submit</button>
+<jsp:include page="partials/navbar.jsp" />
+<div class="container">
+    <h1>Please Log In</h1>
+    <form action="/login.jsp" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" class="form-control" type="password">
+        </div>
+        <input type="submit" class="btn btn-primary btn-block" value="Log In">
     </form>
-
-    <p>displayName: <%= request.getParameter("displayName") %></p>
-    <p>password: <%= request.getParameter("password") %></p>
-    <p>method attribute: <%= request.getMethod() %></p>
-    <p>path: <%= request.getRequestURL() %></p>
-    <p>query string: <%= request.getQueryString() %></p>
-
+</div>
 </body>
 </html>
